@@ -1,0 +1,45 @@
+bedrock_gateway:
+  gateway_identifier: "<your-gateway-identifier>"
+  region: "us-east-1"
+  mcp_endpoint: "/mcp"
+
+authentication:
+  method: "entra"
+  user_oid: "<entra-object-id-of-the-user>"
+
+jira_mcp_tools:
+  - name: search_issues
+    description: "Search Jira issues using JQL"
+    parameters:
+      jql: "JQL query string"
+      max_results: "Maximum number of results (default: 10)"
+
+  - name: get_issue
+    description: "Get a specific Jira issue by key"
+    parameters:
+      issue_key: "Jira issue key (e.g., PERF-123)"
+
+  - name: create_issue
+    description: "Create a new Jira issue"
+    parameters:
+      project_key: "Jira project key"
+      issue_type: "Issue type (Bug, Story, Task, Estimate, Test Case, etc.)"
+      summary: "Issue summary/title"
+      description: "Issue description"
+
+  - name: update_issue_status
+    description: "Update the status of a Jira issue"
+    parameters:
+      issue_key: "Jira issue key"
+      status: "Target status (e.g., Done, In Progress)"
+
+  - name: add_comment
+    description: "Add a comment to a Jira issue"
+    parameters:
+      issue_key: "Jira issue key"
+      comment: "Comment text"
+
+project_keys:
+  performance: "PERF"
+  quality_assurance: "QA"
+  # Add your project keys here
